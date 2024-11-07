@@ -1,6 +1,5 @@
 const mongoose = require('mongoose')
 
-//building user schema, inside the schema, I'm gonna create the properties
 const UserSchema = new mongoose.Schema({
     username: {
         type: String,
