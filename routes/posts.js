@@ -19,7 +19,6 @@ router.post('/', async (req, res) => {
 router.put('/:id', async (req, res) => {
   try {
     const post = await Post.findById(req.params.id)
-    //it should be === , but I don't know what's wrong here
     if (post.userId !== req.body.userId) {
       await post.updateOne({ $set: req.body })
       res.status(200).json('The post has been updated!')
@@ -35,7 +34,6 @@ router.put('/:id', async (req, res) => {
 router.delete('/:id', async (req, res) => {
   try {
     const post = await Post.findById(req.params.id)
-    //it should be === , but I don't know what's wrong here
     if (post.userId !== req.body.userId) {
       await post.deleteOne()
       res.status(200).json('The post has been deleted!')
